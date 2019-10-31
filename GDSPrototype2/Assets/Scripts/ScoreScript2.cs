@@ -18,7 +18,7 @@ public class ScoreScript2 : MonoBehaviour
     void Update()
     {
         score.text = "Score: " + scoreValue;
-        if (scoreValue == 5)
+        if (scoreValue == 3)
         {
             //Clear();
             Win();
