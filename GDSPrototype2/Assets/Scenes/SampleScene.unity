@@ -11095,6 +11095,7 @@ GameObject:
   - component: {fileID: 1571340581}
   - component: {fileID: 1571340580}
   - component: {fileID: 1571340579}
+  - component: {fileID: 1571340585}
   m_Layer: 0
   m_Name: ship (1)
   m_TagString: Untagged
@@ -11251,6 +11252,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1571340585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571340577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9eb5abc06b41b4ebd0b69e8280daf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  player: 1
 --- !u!1001 &1666077136
 PrefabInstance:
   m_ObjectHideFlags: 0

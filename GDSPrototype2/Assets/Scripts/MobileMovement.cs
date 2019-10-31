@@ -24,7 +24,7 @@ public class MobileMovement : MonoBehaviour
 
         if (Input.touchCount > 0)
         {
-            if(Input.GetTouch(0).phase == TouchPhase.Stationary || Input.GetTouch(0).phase == TouchPhase.Moved)
+            if (Input.GetTouch(0).phase == TouchPhase.Stationary || Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 touchPos = Input.GetTouch(0).position;
                 float widthQuarter = Screen.width / 4;
@@ -35,10 +35,10 @@ public class MobileMovement : MonoBehaviour
                     //fractions, compared to touch pos
                     //Check if along left side
                     //Detect if in the upper or lower bottom two quarters of the screen.
-                    
-                    if(touchPos.x < widthQuarter)
+
+                    if (touchPos.x < widthQuarter)
                     {
-                        if(touchPos.y < Screen.height/2 && touchPos.y > heightQuarter)
+                        if (touchPos.y < Screen.height / 2 && touchPos.y > heightQuarter)
                         {
                             //UP
                             Vector2 movement = new Vector2(0, moveVertical);
@@ -59,20 +59,39 @@ public class MobileMovement : MonoBehaviour
                             rb2d.velocity = Vector2.zero;
                         }
                     }
-                    else
+                }
+                if (player == Player.Two)
+                {
+                    if (touchPos.x > Screen.width - widthQuarter)
                     {
-                        GetComponent<SpriteRenderer>().color = Color.white;
+                        if (touchPos.y < Screen.height / 2 && touchPos.y > heightQuarter)
+                        {
+                            //UP
+                            Vector2 movement = new Vector2(0, moveVertical);
+                            rb2d.AddForce(movement * speed);
+                        }
+                        else
+                        {
+                            rb2d.velocity = Vector2.zero;
+                        }
+                        if (touchPos.y < heightQuarter)
+                        {
+                            //DOWN
+                            Vector2 movement = new Vector2(0, moveVertical);
+                            rb2d.AddForce(movement * speed);
+                        }
+                        else
+                        {
+                            rb2d.velocity = Vector2.zero;
+                        }
                     }
                 }
-                //other player
-                //touchPos.x > screen.width - widthquarter
             }
         }
-
     }
-
     public void FixedUpdate()
     {
         //Update velocity (add force, might want a cap?)
     }
 }
+
