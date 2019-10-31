@@ -5,6 +5,7 @@ using UnityEngine;
 public class MeteorSpawn : MonoBehaviour
 {
     public float timerspeed = 2f;
+    private float destroyT = 2.7f;
     private float elapsed;
 
     public GameObject meteorPrefab;
@@ -23,7 +24,7 @@ public class MeteorSpawn : MonoBehaviour
         {
             elapsed = 0f;
         meteorPrefabClone = Instantiate(meteorPrefab, transform.position, Quaternion.identity) as GameObject;
-        Destroy(meteorPrefabClone, 3);
+        Destroy(meteorPrefabClone, destroyT);
         }
     }
 }

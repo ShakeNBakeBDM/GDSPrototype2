@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Rigidbody2D rb2d;
 
+
+    public enum Player { One, Two };
+    public Player player;
+
     private float ScreenWidth;
     private float ScreenHeight;
 
@@ -22,42 +26,52 @@ public class PlayerController : MonoBehaviour
         //int i = 0;
 
         float moveVertical = Input.GetAxis("Vertical");
-
-        Vector2 movement = new Vector2(0, moveVertical);
-        if (Input.GetKey(KeyCode.W))
+        if (player == Player.One)
         {
-            rb2d.AddForce(movement * speed);
-        }
-        else
-        {
-            rb2d.velocity = Vector2.zero;
-            //speed = 0f;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb2d.AddForce(movement * speed);
-        }
-        else
-        {
-            rb2d.velocity = Vector2.zero;
-            //speed = 0f;
-        }
-
-        /*while (i < Input.touchCount)
-        {
-            if (Input.GetTouch (i).position.x > ScreenWidth / 2)
+            Vector2 movement = new Vector2(0, moveVertical);
+            if (Input.GetKey(KeyCode.W))
             {
-                if (Input.GetTouch(i).position.x > ScreenHeight / 2)
-                {
-                    rb2d.AddForce(movement * speed);
-                }
-                else
-                {
-                    rb2d.velocity = Vector2.zero;
-                }
+                rb2d.AddForce(movement * speed);
             }
-            ++i;
-        }*/
+            else
+            {
+                rb2d.velocity = Vector2.zero;
+                //speed = 0f;
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                rb2d.AddForce(movement * speed);
+            }
+            else
+            {
+                rb2d.velocity = Vector2.zero;
+                //speed = 0f;
+            }
+        }
+
+        if (player == Player.Two)
+        {
+            Vector2 movement = new Vector2(0, moveVertical);
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                rb2d.AddForce(movement * speed);
+            }
+            else
+            {
+                rb2d.velocity = Vector2.zero;
+                //speed = 0f;
+            }
+
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                rb2d.AddForce(movement * speed);
+            }
+            else
+            {
+                rb2d.velocity = Vector2.zero;
+                //speed = 0f;
+            }
+        }
     }
 }

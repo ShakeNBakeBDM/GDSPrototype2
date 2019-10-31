@@ -19,7 +19,6 @@ public class PlayerCollision : MonoBehaviour
         //it will then send the player back to the startPos
         if (colliderI.tag == "Obstacle")
             transform.position = startPos;   
-            Debug.Log("Reset");
     }
     
 }

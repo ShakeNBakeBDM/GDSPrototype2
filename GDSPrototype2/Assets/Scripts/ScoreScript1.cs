@@ -24,7 +24,7 @@ public class ScoreScript1 : MonoBehaviour
     {
         score.text = "Score: " + scoreValue;
 
-        if (scoreValue == 2)
+        if (scoreValue == 5)
         {
             Win();
         }

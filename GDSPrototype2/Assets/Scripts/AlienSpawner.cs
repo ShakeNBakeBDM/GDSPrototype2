@@ -5,6 +5,7 @@ using UnityEngine;
 public class AlienSpawner : MonoBehaviour
 {
     public float timerspeed = 2f;
+    private float destroyT = 2.7f;
     private float elapsed;
 
     public GameObject alienPrefab;
@@ -23,7 +24,7 @@ public class AlienSpawner : MonoBehaviour
         {
             elapsed = 0f;
             alienPrefabClone = Instantiate(alienPrefab, transform.position, Quaternion.identity) as GameObject;
-            Destroy(alienPrefabClone, 3);
+            Destroy(alienPrefabClone, destroyT);
         }
     }
 }
