@@ -18,5 +18,18 @@ public class ScoreScript2 : MonoBehaviour
     void Update()
     {
         score.text = "Score: " + scoreValue;
+        if (scoreValue == 2)
+        {
+            //Clear();
+            Win();
+        }
+    }
+
+    //restes trhe players scores and sends them back to the Menu
+    public void Win()
+    {
+        scoreValue = 0;
+        ScoreScript1.scoreValue = 0;
+        Application.LoadLevel("Main Menu");
     }
 }
