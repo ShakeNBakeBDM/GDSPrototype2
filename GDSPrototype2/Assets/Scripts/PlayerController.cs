@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-
     private Rigidbody2D rb2d;
-    
+
+    private float ScreenWidth;
+    private float ScreenHeight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //int i = 0;
+
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector2 movement = new Vector2(0, moveVertical);
@@ -39,5 +43,21 @@ public class PlayerController : MonoBehaviour
             rb2d.velocity = Vector2.zero;
             //speed = 0f;
         }
+
+        /*while (i < Input.touchCount)
+        {
+            if (Input.GetTouch (i).position.x > ScreenWidth / 2)
+            {
+                if (Input.GetTouch(i).position.x > ScreenHeight / 2)
+                {
+                    rb2d.AddForce(movement * speed);
+                }
+                else
+                {
+                    rb2d.velocity = Vector2.zero;
+                }
+            }
+            ++i;
+        }*/
     }
 }
