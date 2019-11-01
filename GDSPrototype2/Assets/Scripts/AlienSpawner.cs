@@ -5,7 +5,7 @@ using UnityEngine;
 public class AlienSpawner : MonoBehaviour
 {
     public float timerspeed = 2f;
-    private float destroyT = 2.7f;
+    private float destroyT = 3f;
     private float elapsed;
 
     public GameObject alienPrefab;
